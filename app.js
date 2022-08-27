@@ -1,19 +1,24 @@
-// 3. Write a JavaScript function that generates all combinations of a string.
-// Example string : 'dog'
-// Expected Output : d,do,dog,o,og,g
+// 4. Write a JavaScript function that returns a passed string with letters in alphabetical order.
+// Example string : 'webmaster'
+// Expected Output : 'abeemrstw'
+// Assume punctuation and numbers symbols are not included in the passed string.
 
-function combinator (s) {
-    list_of_strings = new Array();
-    for(i=0;i<s.length;i++) {
-        for(j=i+1;j<s.length+1;j++) {
-            list_of_strings.push(s.slice(i, j));
+function set(str) {
+    array = str.split("");
+    for (var i = 0; i < array.length; i++) {
+        for (var j = i + 1; j < array.length; j++) {
+            if (array[i].charCodeAt(0) > array[j].charCodeAt(0)) {
+                var temp = array[j].charAt(0);
+                array[j] = array[i].charAt(0);
+                array[i] = temp;
+            }
         }
     }
-    return list_of_strings;
- }
- 
- document.write(combinator("dog"));
-
+    array = array.join("");
+    array = array.toString();
+    document.write(array);
+}
+set("webmaster");
 
 
 
