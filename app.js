@@ -1,25 +1,18 @@
-// 4. Write a JavaScript function that returns a passed string with letters in alphabetical order.
-// Example string : 'webmaster'
-// Expected Output : 'abeemrstw'
-// Assume punctuation and numbers symbols are not included in the passed string.
+// 5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
+// Example string : 'the quick brown fox'
+// Expected Output : 'The Quick Brown Fox '
 
-function set(str) {
-    array = str.split("");
-    for (var i = 0; i < array.length; i++) {
-        for (var j = i + 1; j < array.length; j++) {
-            if (array[i].charCodeAt(0) > array[j].charCodeAt(0)) {
-                var temp = array[j].charAt(0);
-                array[j] = array[i].charAt(0);
-                array[i] = temp;
-            }
-        }
-    }
-    array = array.join("");
-    array = array.toString();
-    document.write(array);
+function uppercase(str)
+{
+  var array1 = str.split(' ');
+  var newarray1 = [];
+    
+  for(var x = 0; x < array1.length; x++){
+      newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+  return newarray1.join(' ');
 }
-set("webmaster");
-
+console.log(uppercase("the quick brown fox"));
 
 
 
